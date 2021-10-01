@@ -1,8 +1,6 @@
 traefik-mesh:
-  acl: true
   kubedns: true
   clusterDomain: cluster.local
-  defaultMode: http
 
   controller:
     image:
