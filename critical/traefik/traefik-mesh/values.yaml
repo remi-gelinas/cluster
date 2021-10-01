@@ -1,12 +1,5 @@
 traefik-mesh:
-  kubedns: true
-  clusterDomain: cluster.local
-
   controller:
     image:
       name: traefik/mesh
       tag: v1.4.1
-
-  proxy:
-    image:
-      name: traefik
