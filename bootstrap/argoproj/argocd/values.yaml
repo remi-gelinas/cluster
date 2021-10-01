@@ -1,0 +1,5 @@
+argo-cd:
+  global:
+    image:
+      repository: argoproj/argocd
+      tag: v2.1.2
