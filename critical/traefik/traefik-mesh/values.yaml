@@ -1,0 +1,14 @@
+traefik-mesh:
+  acl: true
+  kubedns: true
+  clusterDomain: cluster.local
+  defaultMode: http
+
+  controller:
+    image:
+      name: traefik/mesh
+      tag: v1.4.1
+
+  proxy:
+    image:
+      name: traefik
