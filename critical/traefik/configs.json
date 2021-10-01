@@ -2,6 +2,6 @@
   {
     "name": "traefik",
     "namespace": "ingress",
-    "folderPath": "critical/traefik/
+    "folderPath": "critical/traefik"
   }
 ]
