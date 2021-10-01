@@ -1,0 +1,63 @@
+traefik:
+  additionalArguments:
+    - "--certificatesresolvers.letsencrypt.acme.email=$(CLOUDFLARE_EMAIL)"
+    - "--certificatesresolvers.letsencrypt.acme.storage=/data/acme.json"
+    - "--certificatesresolvers.letsencrypt.acme.caserver=https://acme-v02.api.letsencrypt.org/directory"
+    - "--certificatesresolvers.letsencrypt.acme.dnschallenge=true"
+    - "--certificatesresolvers.letsencrypt.acme.dnschallenge.provider=cloudflare"
+    - "--api.insecure=true"
+    - "--accesslog=true"
+    - "--log.level=INFO"
+
+  deployment:
+    additionalVolumes:
+      - name: acme-storage
+        hostPath:
+          path: /home/remi/hosted/traefik/volumes/letsencrypt
+          type: Directory
+    initContainers:
+      - name: volume-permissions
+        image: busybox:1.31.1
+        command: ["sh", "-c", "chmod -Rv 600 /data/*"]
+        volumeMounts:
+          - name: acme-storage
+            mountPath: /data
+
+  env:
+    - name: CLOUDFLARE_EMAIL
+      valueFrom:
+        secretKeyRef:
+          name: cloudflare
+          key: email
+
+    - name: CLOUDFLARE_DNS_API_TOKEN
+      valueFrom:
+        secretKeyRef:
+          name: cloudflare
+          key: dns-token
+
+  ports:
+    web:
+      port: 8000
+      expose: true
+      exposedPort: 80
+      protocol: TCP
+      redirectTo: websecure
+    dns:
+      port: 8853
+      expose: true
+      exposedPort: 53
+      protocol: TCP
+    dnsudp:
+      port: 8854
+      expose: true
+      exposedPort: 53
+      protocol: UDP
+
+  securityContext:
+    readOnlyRootFilesystem: false
+    runAsGroup: 1000
+    runAsUser: 1000
+
+  podSecurityContext:
+    fsGroup: 1000
