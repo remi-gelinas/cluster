@@ -8,6 +8,7 @@ resources:
 
   # Base manifest set for HA
   - https://raw.githubusercontent.com/argoproj/argo-cd/master/manifests/ha/install.yaml
+  - https://raw.githubusercontent.com/argoproj-labs/applicationset/v0.2.0/manifests/install.yaml
 
 components:
 - https://github.com/argoproj-labs/argocd-extensions/manifests
