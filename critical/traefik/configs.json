@@ -3,5 +3,10 @@
     "name": "traefik",
     "namespace": "ingress",
     "folderPath": "critical/traefik/traefik"
+  },
+  {
+    "name": "traefik-mesh",
+    "namespace": "ingress",
+    "folderPath": "critical/traefik/traefik-mesh"
   }
 ]
