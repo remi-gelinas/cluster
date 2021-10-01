@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: cluster-critical
+  namespace: argocd
+spec:
+  description: "Utility applications critical to cluster operation."
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: ingress
+      server: https://kubernetes.default.svc
