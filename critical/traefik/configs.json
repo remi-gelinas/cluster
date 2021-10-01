@@ -1,8 +1,7 @@
 [
   {
     "name": "traefik",
-    "cluster": "home",
     "namespace": "ingress",
-    "folderPath": "critical/traefik/traefik"
+    "folderPath": "critical/traefik/
   }
 ]
