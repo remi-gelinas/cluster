@@ -6,9 +6,6 @@ resources:
   # Argo-specific resources
   - base/argo-cd-ui-ingressroute.yaml
 
-  # Managed applications
-  - applications/traefik-application.yaml
-
   # Base manifest set for HA
   - https://raw.githubusercontent.com/argoproj/argo-cd/master/manifests/ha/install.yaml
 

@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cluster-critical
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/remi-gelinas/cluster.git
+        revision: HEAD
+        files:
+          - path: "critical/**/configs.json"
+  template:
+    metadata:
+      name: '{{ name }}'
+      annotations:
+        argocd.argoproj.io/manifest-generate-paths: '/{{ folderPath }}'
+    spec:
+      project: cluster-critical
+      source:
+        path: '{{ folderPath }}'
+        targetRevision: HEAD
+        repoURL: https://github.com/remi-gelinas/cluster.git
+        helm:
+          valueFiles:
+            - values.yaml
+      destination:
+        namespace: '{{ namespace }}'
+        name: '{{ cluster }}'
