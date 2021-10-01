@@ -8,6 +8,14 @@ resources:
 
   - https://raw.githubusercontent.com/argoproj/argo-cd/master/manifests/install.yaml
 
+patches:
+  - target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: argocd-server
+    path: overlays/argocd-server-fix-command.patch.yaml
+
 images:
   - name: argoproj/argocd
     newTag: v2.1.3
