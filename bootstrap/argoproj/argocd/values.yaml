@@ -3,8 +3,6 @@ argo-cd:
     image:
       repository: argoproj/argocd
       tag: v2.1.2
-  dex:
-    enabled: false
   server:
     configEnabled: true
     extraArgs:
