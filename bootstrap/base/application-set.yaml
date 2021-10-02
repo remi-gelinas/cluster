@@ -20,6 +20,9 @@ spec:
         path: '{{ folderPath }}'
         targetRevision: HEAD
         repoURL: https://github.com/remi-gelinas/cluster.git
+        helm:
+          valueFiles:
+            - values.yaml
       destination:
         namespace: '{{ namespace }}'
         server: https://kubernetes.default.svc
