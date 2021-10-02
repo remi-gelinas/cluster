@@ -1,0 +1,12 @@
+[
+  {
+    "name": "argocd",
+    "namespace": "argocd",
+    "folderPath": "bootstrap/argoproj/argocd"
+  },
+  {
+    "name": "argocd-applicationset",
+    "namespace": "argocd",
+    "folderPath": "bootstrap/argoproj/applicationset"
+  },
+]
