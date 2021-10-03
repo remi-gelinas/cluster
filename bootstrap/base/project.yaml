@@ -8,15 +8,15 @@ metadata:
 spec:
   description: ""
   sourceRepos:
-    - '*'
+    - "*"
   destinations:
     - namespace: kube-system
       server: https://kubernetes.default.svc
     - namespace: argocd
       server: https://kubernetes.default.svc
   clusterResourceWhitelist:
-    - group: '*'
-      kind: '*'
+    - group: "*"
+      kind: "*"
   namespaceResourceWhitelist:
-    - group: '*'
-      kind: '*'
+    - group: "*"
+      kind: "*"

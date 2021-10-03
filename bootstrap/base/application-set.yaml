@@ -11,20 +11,20 @@ spec:
           - path: "bootstrap/**/configs.json"
   template:
     metadata:
-      name: '{{ name }}'
+      name: "{{ name }}"
       annotations:
-        argocd.argoproj.io/manifest-generate-paths: '/{{ folderPath }}'
+        argocd.argoproj.io/manifest-generate-paths: "/{{ folderPath }}"
     spec:
       project: cluster-bootstrap
       source:
-        path: '{{ folderPath }}'
+        path: "{{ folderPath }}"
         targetRevision: HEAD
         repoURL: https://github.com/remi-gelinas/cluster.git
         helm:
           valueFiles:
             - values.yaml
       destination:
-        namespace: '{{ namespace }}'
+        namespace: "{{ namespace }}"
         server: https://kubernetes.default.svc
       syncPolicy:
         automated:

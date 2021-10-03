@@ -3,5 +3,5 @@
     "name": "sealed-secrets",
     "namespace": "kube-system",
     "folderPath": "bootstrap/sealed-secrets"
-  },
+  }
 ]

@@ -8,13 +8,13 @@ metadata:
 spec:
   description: "Utility applications critical to cluster operation."
   sourceRepos:
-    - '*'
+    - "*"
   destinations:
     - namespace: ingress
       server: https://kubernetes.default.svc
   clusterResourceWhitelist:
-    - group: '*'
-      kind: '*'
+    - group: "*"
+      kind: "*"
   namespaceResourceWhitelist:
-    - group: '*'
-      kind: '*'
+    - group: "*"
+      kind: "*"
