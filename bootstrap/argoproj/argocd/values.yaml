@@ -7,3 +7,6 @@ argo-cd:
     configEnabled: true
     extraArgs:
       - --insecure
+    config:
+      url: https://argocd.services.gelinas.cloud
+      statusbadge.enabled: "true"
