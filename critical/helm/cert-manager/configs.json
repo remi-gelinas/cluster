@@ -2,6 +2,6 @@
   {
     "name": "cert-manager",
     "namespace": "cert-manager",
-    "folderPath": "critical/cert-manager"
+    "folderPath": "critical/helm/cert-manager"
   }
 ]

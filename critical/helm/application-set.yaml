@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: cluster-critical
+  name: cluster-critical-helm
 spec:
   generators:
     - git:
         repoURL: https://github.com/remi-gelinas/cluster.git
         revision: HEAD
         files:
-          - path: "critical/**/configs.json"
+          - path: "critical/helm/**/configs.json"
   template:
     metadata:
       name: "{{ name }}"
