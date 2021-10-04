@@ -2,6 +2,6 @@
   {
     "name": "sealed-secrets",
     "namespace": "kube-system",
-    "folderPath": "bootstrap/sealed-secrets"
+    "folderPath": "bootstrap/helm/sealed-secrets"
   }
 ]
