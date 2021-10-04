@@ -1,0 +1,4 @@
+linkerd:
+  installNamespace: false
+  identityTrustAnchorsPEM: ca.crt
+  identity.issuer.scheme: kubernetes.io/tls
