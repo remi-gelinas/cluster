@@ -8,5 +8,5 @@
     "name": "argocd-applicationset",
     "namespace": "argocd",
     "folderPath": "bootstrap/kustomize/argoproj/applicationset"
-  },
+  }
 ]
