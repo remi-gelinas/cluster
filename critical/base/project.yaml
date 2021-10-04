@@ -12,6 +12,8 @@ spec:
   destinations:
     - namespace: ingress
       server: https://kubernetes.default.svc
+    - namespace: cert-manager
+      server: https://kubernetes.default.svc
   clusterResourceWhitelist:
     - group: "*"
       kind: "*"
