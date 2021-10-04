@@ -1,0 +1,6 @@
+[submodule "bootstrap/kustomize/argocd/base/argo-cd"]
+	path = bootstrap/kustomize/argocd/base/argo-cd
+	url = https://github.com/argoproj/argo-cd
+[submodule "bootstrap/kustomize/argoproj/applicationset/base/applicationset"]
+	path = bootstrap/kustomize/argoproj/applicationset/base/applicationset
+	url = https://github.com/argoproj-labs/applicationset

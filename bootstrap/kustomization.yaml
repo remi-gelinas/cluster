@@ -5,4 +5,5 @@ namespace: argocd
 
 resources:
   - base/project.yaml
-  - base/application-set.yaml
+  - helm/application-set.yaml
+  - kustomize/application-set.yaml

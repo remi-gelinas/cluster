@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cluster-bootstrap-helm
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/remi-gelinas/cluster.git
+        revision: HEAD
+        files:
+          - path: "bootstrap/helm/**/configs.json"
+  template:
+    metadata:
+      name: "{{ name }}"
+      annotations:
+        argocd.argoproj.io/manifest-generate-paths: "/{{ folderPath }}"
+    spec:
+      project: cluster-bootstrap
+      source:
+        path: "{{ folderPath }}"
+        targetRevision: HEAD
+        repoURL: https://github.com/remi-gelinas/cluster.git
+        helm:
+          valueFiles:
+            - values.yaml
+      destination:
+        namespace: "{{ namespace }}"
+        server: https://kubernetes.default.svc
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+          allowEmpty: true
+        syncOptions:
+          - CreateNamespace=true

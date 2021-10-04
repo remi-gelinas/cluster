@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cluster-bootstrap-kustomize
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/remi-gelinas/cluster.git
+        revision: HEAD
+        files:
+          - path: "bootstrap/kustomize/**/configs.json"
+  template:
+    metadata:
+      name: "{{ name }}"
+      annotations:
+        argocd.argoproj.io/manifest-generate-paths: "/{{ folderPath }}"
+    spec:
+      project: cluster-bootstrap
+      source:
+        path: "{{ folderPath }}"
+        targetRevision: HEAD
+        repoURL: https://github.com/remi-gelinas/cluster.git
+      destination:
+        namespace: "{{ namespace }}"
+        server: https://kubernetes.default.svc
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+          allowEmpty: true
+        syncOptions:
+          - CreateNamespace=true
