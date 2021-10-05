@@ -1,7 +1,0 @@
-[
-  {
-    "name": "linkerd",
-    "namespace": "linkerd",
-    "folderPath": "critical/helm/linkerd"
-  }
-]
