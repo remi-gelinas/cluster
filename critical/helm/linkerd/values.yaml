@@ -2,6 +2,7 @@ linkerd2:
   installNamespace: false
   identityTrustAnchorsPEM: ca.crt
   identity:
+    externalCA: true
     issuer:
       # Workaround for https://github.com/linkerd/linkerd2/issues/7024
       crtExpiry: "NOOP"
