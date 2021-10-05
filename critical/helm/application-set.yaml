@@ -33,3 +33,5 @@ spec:
           allowEmpty: true
         syncOptions:
           - CreateNamespace=true
+      ignoreDifferences: |
+        {{ ignoreDifferences }}
