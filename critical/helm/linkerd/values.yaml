@@ -1,4 +1,7 @@
-linkerd:
+linkerd2:
   installNamespace: false
   identityTrustAnchorsPEM: ca.crt
   identity.issuer.scheme: kubernetes.io/tls
+
+  # Workaround for https://github.com/linkerd/linkerd2/issues/7024
+  identity.issuer.crtExpiry: "NOOP"
