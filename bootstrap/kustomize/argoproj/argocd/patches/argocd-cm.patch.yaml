@@ -13,3 +13,7 @@ data:
     hs.status = "Healthy"
     hs.message = "Controller doesn't report resource status"
     return hs
+
+  resource.customizations.ignoreDifferences.admissionregistration.k8s.io_MutatingWebhookConfiguration: |
+    jqPathExpressions:
+    - '.webhooks[]?.clientConfig.caBundle'
