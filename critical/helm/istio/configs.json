@@ -2,14 +2,6 @@
   {
     "name": "istio",
     "namespace": "istio-system",
-    "folderPath": "critical/helm/istio",
-    "ignoreDifferences": [
-      {
-        "kind": "MutatingWebhookConfiguration",
-        "jsonPointers": [
-          "/webhooks/clientConfig/caBundle"
-        ]
-      }
-    ]
+    "folderPath": "critical/helm/istio"
   }
 ]
