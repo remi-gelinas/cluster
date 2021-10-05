@@ -1,0 +1,7 @@
+[
+  {
+    "name": "istio",
+    "namespace": "istio-system",
+    "folderPath": "critical/helm/istio"
+  }
+]
