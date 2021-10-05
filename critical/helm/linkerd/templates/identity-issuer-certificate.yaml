@@ -2,6 +2,9 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: linkerd-identity-issuer
+
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
 spec:
   secretName: linkerd-identity-trust-roots
   duration: 48h0m0s
