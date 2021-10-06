@@ -1,0 +1,7 @@
+[
+  {
+    "name": "kiali",
+    "namespace": "istio-system",
+    "folderPath": "critical/helm/kiali"
+  }
+]
