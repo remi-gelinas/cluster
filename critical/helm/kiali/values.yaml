@@ -3,3 +3,5 @@ kiali:
 
   auth:
     strategy: anonymous
+  deployment:
+    ingress_enabled: false
