@@ -1,7 +1,6 @@
 kiali:
-  fullnameOverride: kiali
-
   auth:
     strategy: anonymous
   deployment:
+    instance_name: kiali
     ingress_enabled: false
